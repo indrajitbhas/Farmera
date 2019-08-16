@@ -1,0 +1,23 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>cardGroup</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card *ngFor="let item of items">
+    <ion-card-header>
+      <ion-card-title>Titulo</ion-card-title>
+    </ion-card-header>
+
+    <ion-card-content>
+      <app-expandable-card expandHeight="100px" [expanded]="item.expanded">
+        <p>
+          Estamos aqui!!
+        </p>
+      </app-expandable-card>
+      <ion-icon name="arrow-down"></ion-icon>
+    </ion-card-content>
+
+  </ion-card>
+</ion-content>
