@@ -5,28 +5,13 @@
       <ion-card-content>
         <app-expandable-card [card]="teamMembersList" [item]="items[0]" [items] = "items">
           <ion-list #teamMembersList>
-            <ion-item class="item">
+            <ion-item class="item" *ngFor="let member of members | async" lines="none">
               <ion-avatar slot="start">
-                <img src="https://gravatar.com/avatar/dba6bae8c566f9d4041fb9cd9ada7741?d=identicon&f=y">
+                <img src="{{member.picture}}">
               </ion-avatar>
-              <ion-label>
-                <h3>Item Avatar</h3>
-                <p>ASDFASDFASasdf</p>
-              </ion-label>
-              <ion-fab-button class="button_member" size="small">
-                <ion-icon ios="ios-text" md="md-text" class="button_member_icon"></ion-icon>
-              </ion-fab-button>
-              <ion-fab-button class="button_member" size="small">
-                <ion-icon ios="ios-call" md="md-call" class="button_member_icon"></ion-icon>
-              </ion-fab-button>
-            </ion-item>
-            <ion-item class="item">
-              <ion-avatar slot="start">
-                <img src="https://gravatar.com/avatar/dba6bae8c566f9d4041fb9cd9ada7741?d=identicon&f=y">
-              </ion-avatar>
-              <ion-label>
-                <h3>Item Avatar</h3>
-                <p>ASDFASDFASasdf</p>
+              <ion-label class="capitalized">
+                <h3>{{member.name}}</h3>
+                <p>last check in {{member.lastCheckedIn | timeAgo}}</p>
               </ion-label>
               <ion-fab-button class="button_member" size="small">
                 <ion-icon ios="ios-text" md="md-text" class="button_member_icon"></ion-icon>

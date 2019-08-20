@@ -4,6 +4,7 @@ import { IonicModule } from '@ionic/angular';
 import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
+import {TimeAgoPipe} from 'time-ago-pipe';
 
 
 import { HomePage } from './home.page';
@@ -28,7 +29,8 @@ import { EventsService } from '../events.service'
   declarations: [
     HomePage,
     ExpandableCardComponent,
-    CardGroupPage
+    CardGroupPage,
+    TimeAgoPipe
   ],
   providers:[
     TeamMembersService,

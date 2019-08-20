@@ -8,4 +8,8 @@ import { from } from 'rxjs';
 export class EventsService {
 
   constructor(private http: HttpClient) { }
+
+  public getEvents(){
+    return [{title: "Water.cons alert", body: "0.48 gal avg. per day", time: Date.now() - (2 * 3600000) }]
+  }
 }

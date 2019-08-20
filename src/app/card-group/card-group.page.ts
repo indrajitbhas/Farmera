@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { TeamMember } from "../team-members.service";
 import { TeamMembersService } from '../team-members.service';
-import { HttpClient, HttpResponse } from '@angular/common/http';
+import { HttpResponse } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
 @Component({
@@ -11,7 +12,7 @@ import { Observable } from 'rxjs';
 export class CardGroupPage implements OnInit {
   public items: any = [];
   public cardHeight: string = "";
-  public teamMemberList: Observable<HttpResponse<Array<any>>>;
+  public members: Observable<Array<TeamMember>>;
 
   constructor(private teamMembersService: TeamMembersService) {
 
@@ -22,7 +23,6 @@ export class CardGroupPage implements OnInit {
   }
 
   ngOnInit() {
-    this.teamMembersService.getTeamMembers().subscribe(x => console.log(x))
-
+    this.members = this.teamMembersService.getTeamMembers()
   }
 }
