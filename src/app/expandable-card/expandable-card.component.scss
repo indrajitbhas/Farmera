@@ -5,5 +5,12 @@
 }
 
 .collapsed {
-  max-height: 0 !important;
+  max-height: 60px !important;
+}
+
+[name = arrow-down], [name = arrow-up]{
+  width:100%;
+  margin-bottom: -20px;
+  padding:10px 0px;
+  height: 1.2em;
 }

@@ -74,4 +74,39 @@
   --ion-color-light-contrast-rgb: 0, 0, 0;
   --ion-color-light-shade: #d7d8da;
   --ion-color-light-tint: #f5f6f9;
+
+  ion-fab-button{
+    --background: white;
+    --border-color: #000000;
+    --border-width: 1px;
+    --border-style: solid;
+    --color-hover: white;
+    --background-hover: white;
+    --box-shadow: white;
+    --padding-end: 0px;
+    --padding-start: 0px;
+    margin: 4px;
+  }
+  
+  ion-fab-button{
+    --background: white;
+    --border-color: #000000;
+    --border-width: 1px;
+    --border-style: solid;
+    --color-hover: white;
+    --background-hover: white;
+    --box-shadow: white;
+    --padding-end: 0px;
+    --padding-start: 0px;
+    margin: 4px;
+  }
+
+  ion-card {
+    border-radius: 15px;
+    overflow: hidden;
+  }
+
+  ion-card-content{
+    padding:0 0 10px 0;
+  }
 }

@@ -1,4 +1,5 @@
 import { Component } from "@angular/core";
+import { CardGroupPage } from '../card-group/card-group.page';
 
 @Component({
   selector: "app-home",

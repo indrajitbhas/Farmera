@@ -7,22 +7,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CardGroupPage implements OnInit {
   public items: any = [];
+  public cardHeight: string = "";
 
   constructor() {
     this.items = [
-      { expanded: false },
-      { expanded: false },
-      { expanded: false },
-      { expanded: false },
-      { expanded: false },
-      { expanded: false },
-      { expanded: false },
-      { expanded: false },
-      { expanded: false }
+      { item: "", expanded: false },
+      { item: "", expanded: false }
     ];
   }
 
   ngOnInit() {
   }
-
 }

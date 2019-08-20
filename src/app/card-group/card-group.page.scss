@@ -1,14 +1,29 @@
-[name = arrow-down]{
-  width:100%;
-  margin-bottom: -20px;
-  padding:10px 0px;
+
+.button_member_icon{
+  fill: black
 }
 
 
-[name = arrow-down]{
-  transition: max-height 1s ease-in-out;
+.ion-padding-horizontal{
+  padding: 0 16px;
 }
 
-.rotate180deg {
-  transform: rotate(180deg);
+.ion-margin-vertical{
+  margin: 16px 0;
+}
+
+.ion-header-margin-vertical{
+  margin: 24px 0;
+}
+
+.list-header{
+  font-size: 16px;
+  font-weight: bold;
+  /* font-stretch: extra-condensed; */
+  font-variant: all-petite-caps;
+  letter-spacing: 2px;
+}
+
+.card-wrapper{
+  padding-top: 20px;
 }

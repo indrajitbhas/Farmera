@@ -1,5 +1,4 @@
-import { Component, AfterViewInit, Input, ViewChild,  ElementRef, Renderer2 } from "@angular/core";
-
+import { Component, Input, ViewChild,  ElementRef, Renderer2, AfterViewInit } from "@angular/core";
 
 @Component({
   selector: 'app-expandable-card',
@@ -8,14 +7,38 @@ import { Component, AfterViewInit, Input, ViewChild,  ElementRef, Renderer2 } fr
 })
 export class ExpandableCardComponent implements AfterViewInit {
   @ViewChild("expandWrapper", {static: false }) expandWrapper: ElementRef;
-  @Input("expanded") expanded: boolean = false;
-  @Input("expandHeight") expandHeight: string = "150px";
-  // @Input("item") item: any;
+  @Input() card: any;
+  @Input() item: any;
+  @Input() items: Array<any>;
+
+  expanded: boolean = false;
 
   constructor(public renderer: Renderer2) {}
 
+  ngAfterViewInit(){
+      // this.renderer.setStyle(this.expandWrapper.nativeElement, "max-height", "200px");
+      //this.expanded = this.item.expanded;
+  }
 
-  ngAfterViewInit() {
-    this.renderer.setStyle(this.expandWrapper.nativeElement, "max-height", this.expandHeight);
+  ngDoCheck() {
+    if(this.card.el.offsetHeight){
+      this.renderer.setStyle(this.expandWrapper.nativeElement, "max-height", this.card.el.offsetHeight + "px");
+    }
+  }
+
+  expandItem(): void {
+    if (this.item.expanded) {
+      this.item.expanded = false;
+    } else {
+      this.items.map(listItem => {
+        if (this.item == listItem) {
+          console.log(this.card.el.offsetHeight)
+          listItem.expanded = !listItem.expanded;
+        } else {
+          listItem.expanded = false;
+        }
+        return listItem;
+      });
+    }
   }
 }
