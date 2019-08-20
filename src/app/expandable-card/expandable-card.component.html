@@ -2,5 +2,5 @@
     <ng-content></ng-content>
 </div>
 <div *ngIf="item.expanded; then ex else col"></div>
-<ng-template #ex><ion-icon name="arrow-up" (click)="expandItem()"></ion-icon></ng-template>
-<ng-template #col><ion-icon name="arrow-down" (click)="expandItem()"></ion-icon></ng-template>
+<ng-template #ex><ion-icon name="ios-arrow-up" (click)="expandItem()"></ion-icon></ng-template>
+<ng-template #col><ion-icon name="ios-arrow-down" (click)="expandItem()"></ion-icon></ng-template>

@@ -13,11 +13,10 @@ export class ExpandableCardComponent implements AfterViewInit {
 
   expanded: boolean = false;
 
-  constructor(public renderer: Renderer2) {}
+  constructor(public renderer: Renderer2) {
+  }
 
   ngAfterViewInit(){
-      // this.renderer.setStyle(this.expandWrapper.nativeElement, "max-height", "200px");
-      //this.expanded = this.item.expanded;
   }
 
   ngDoCheck() {

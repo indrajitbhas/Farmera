@@ -8,9 +8,10 @@
   max-height: 60px !important;
 }
 
-[name = arrow-down], [name = arrow-up]{
+[name = ios-arrow-down], [name = ios-arrow-up]{
   width:100%;
   margin-bottom: -20px;
   padding:10px 0px;
   height: 1.2em;
+  font-weight: bold;
 }
