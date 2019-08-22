@@ -1,4 +1,5 @@
 import { Component, Input, ViewChild,  ElementRef, Renderer2, AfterViewInit } from "@angular/core";
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-expandable-card',
@@ -7,9 +8,11 @@ import { Component, Input, ViewChild,  ElementRef, Renderer2, AfterViewInit } fr
 })
 export class ExpandableCardComponent implements AfterViewInit {
   @ViewChild("expandWrapper", {static: false }) expandWrapper: ElementRef;
+  @ViewChild("arrows", {static: false }) arrows: ElementRef;
   @Input() card: any;
   @Input() item: any;
   @Input() items: Array<any>;
+  @Input() showArrow: Observable<Array<any>>;
 
   expanded: boolean = false;
 
@@ -17,6 +20,11 @@ export class ExpandableCardComponent implements AfterViewInit {
   }
 
   ngAfterViewInit(){
+    this.showArrow.subscribe(x => {
+      if(x.length < 2){
+        this.renderer.setStyle(this.arrows.nativeElement, "visibility", "hidden");
+      }
+    })
   }
 
   ngDoCheck() {

@@ -1,9 +1,9 @@
 <div class="card-wrapper">
   <section class="ion-padding-horizontal">
-    <ion-card-subtitle class="ion-header-margin-vertical" class="list-header">TEAM ({{3}})</ion-card-subtitle>
+    <ion-card-subtitle class="ion-header-margin-vertical" class="list-header">TEAM ({{ membersLength }})</ion-card-subtitle>
     <ion-card class="ion-margin-vertical">
       <ion-card-content>
-        <app-expandable-card [card]="teamMembersList" [item]="items[0]" [items] = "items">
+        <app-expandable-card [card]="teamMembersList" [item]="items[0]" [items] = "items" [showArrow] = "members">
           <ion-list #teamMembersList>
             <ion-item class="item" *ngFor="let member of members | async" lines="none">
               <ion-avatar slot="start">
@@ -25,57 +25,26 @@
       </ion-card-content>
     </ion-card>
   </section>
-  <section class="ion-padding-horizontal">
-    <ion-card-subtitle class="ion-header-margin-vertical" class="list-header">ALERTS ({{3}})</ion-card-subtitle>
+  <section class="ion-padding-horizontal alerts">
+    <ion-card-subtitle class="ion-header-margin-vertical" class="list-header">ALERTS ({{ alertsLength }})</ion-card-subtitle>
     <ion-card class="ion-margin-vertical">
       <ion-card-content>
-        <app-expandable-card [card]="alertsList" [item]="items[1]" [items] = "items">
+        <app-expandable-card [card]="alertsList" [item]="items[1]" [items] = "items" [showArrow] = "alerts">
           <ion-list #alertsList>
-            <ion-item class="item">
-              <ion-avatar slot="start">
-                <img src="https://gravatar.com/avatar/dba6bae8c566f9d4041fb9cd9ada7741?d=identicon&f=y">
-              </ion-avatar>
-              <ion-label>
-                <h3>Item Avatar</h3>
-                <p>ASDFASDFASasdf</p>
-              </ion-label>
-              <ion-fab-button class="button_member" size="small">
-                <ion-icon ios="ios-text" md="md-text" class="button_member_icon"></ion-icon>
-              </ion-fab-button>
-              <ion-fab-button class="button_member" size="small">
-                <ion-icon ios="ios-call" md="md-call" class="button_member_icon"></ion-icon>
-              </ion-fab-button>
-            </ion-item>
-            <ion-item class="item">
-              <ion-avatar slot="start">
-                <img src="https://gravatar.com/avatar/dba6bae8c566f9d4041fb9cd9ada7741?d=identicon&f=y">
-              </ion-avatar>
-              <ion-label>
-                <h3>Item Avatar</h3>
-                <p>ASDFASDFASasdf</p>
-              </ion-label>
-              <ion-fab-button class="button_member" size="small">
-                <ion-icon ios="ios-text" md="md-text" class="button_member_icon"></ion-icon>
-              </ion-fab-button>
-              <ion-fab-button class="button_member" size="small">
-                <ion-icon ios="ios-call" md="md-call" class="button_member_icon"></ion-icon>
-              </ion-fab-button>
-            </ion-item>
-            <ion-item class="item">
-              <ion-avatar slot="start">
-                <img src="https://gravatar.com/avatar/dba6bae8c566f9d4041fb9cd9ada7741?d=identicon&f=y">
-              </ion-avatar>
-              <ion-label>
-                <h3>Item Avatar</h3>
-                <p>ASDFASDFASasdf</p>
-              </ion-label>
-              <ion-fab-button class="button_member" size="small">
-                <ion-icon ios="ios-text" md="md-text" class="button_member_icon"></ion-icon>
-              </ion-fab-button>
-              <ion-fab-button class="button_member" size="small">
-                <ion-icon ios="ios-call" md="md-call" class="button_member_icon"></ion-icon>
-              </ion-fab-button>
-            </ion-item>
+            <div class="item" *ngFor="let alert of alerts | async">
+              <div class=" alert-icons">
+                <div><ion-icon name="rainy"></ion-icon></div>
+                <div><h3>{{alert.title}}</h3></div>
+                <div><i class="material-icons toggle-icon">vibration</i></div>
+                <div><ion-toggle color="primary" class="toggle-icon"></ion-toggle></div>
+              </div>
+              <div class="alert-message">
+                <ul>
+                  <span><li>{{alert.body}}
+                </li></span></ul>
+                <div style="text-align:left">{{alert.time | timeAgo}}</div>
+              </div>
+            </div>
           </ion-list>
         </app-expandable-card>
       </ion-card-content>

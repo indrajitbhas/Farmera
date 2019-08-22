@@ -33,6 +33,82 @@
   text-transform: capitalize;
 }
 
+.event-title h3{
+  font-size: 16px;
+}
+
 .capitalized p{
   font-size: 12px;
+}
+
+.alerts [name="rainy"]{
+  font-size: 26px;
+}
+
+.alert-icons{
+  display:flex;
+  align-items: normal;
+  justify-content: space-around;
+  justify-content: center;
+  padding: 0px 10px 0 16px;
+
+  :first-child{
+    flex: 0 0 35px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+  }
+
+  :nth-child(2){
+    flex: auto;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    h3{
+      font-size: 16px;
+      color: var(--ion-color-dark);
+    }
+  }
+
+  :nth-child(3){
+    flex:0 0 40px;
+    text-align:right;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  :nth-child(4){
+    flex:0 0 40px;
+    text-align: right;
+    button{
+      padding-right: 0;
+    }
+  }
+}
+
+.alert-message{
+  display:flex;
+  align-items: normal;
+  justify-content: space-around;
+  justify-content: center;
+  padding: 0px 10px 0 16px;
+
+  :first-child{
+    flex: 0 0 200px;
+    margin: 0;
+    font-size: 16px;
+    color: var(--ion-color-danger);
+    span{
+      position: relative;
+      left: -15px;
+    }
+  }
+
+  :nth-child(2){
+    flex: 1;
+    padding-top: 2px;
+  }
 }
