@@ -1,5 +1,52 @@
 ion-header{
   height:150px;
+  display: flex;
+  flex-flow: row wrap;
   background-color: green;
-  background: linear-gradient(45deg, #4b626e, #263238)
+  background: linear-gradient(45deg, #263238, #4b626e);
+  padding: 18px 22px;
+  justify-content: space-between;
+
+  ion-button:nth-of-type(1){
+    --border-radius: 15px;
+    --background: #1110;
+    --border-color: white;
+    --border-width: 1px;
+    color: white;
+    width: 47%;
+    height: 47px;
+  }
+
+  ion-button:nth-of-type(2){
+    --border-radius: 15px;
+    --background: #CCDC39;
+    --border-color: white;
+    --border-width: 1px;
+    color: #2C3B41;
+    width: 47%;
+    height: 47px;
+  }
+
+  div {
+    color: white;
+    font-size: 14px;
+    width: 47%;
+  }
+
+  div:nth-of-type(2){
+    text-align: right;
+    *{
+      padding: 2px 0;
+    }
+  }
+
+  div span{
+    width: 100%;
+    display: block;
+  }
+
+  :nth-child(1) span:nth-of-type(1){
+    font-size: 25px;
+    color: white;
+  }
 }
