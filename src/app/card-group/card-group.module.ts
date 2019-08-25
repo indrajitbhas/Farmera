@@ -5,22 +5,27 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { IonicModule } from '@ionic/angular';
 
+import { ExpandableCardComponent } from '../expandable-card/expandable-card.component';
+import { AlertComponent } from '../alert/alert.component';
+import { TeamMemberComponent } from '../team-member/team-member.component';
 import { CardGroupPage } from './card-group.page';
+import { TimeAgoPipe } from 'time-ago-pipe';
 
-const routes: Routes = [
-  {
-    path: '',
-    component: CardGroupPage
-  }
-];
+
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
-    IonicModule,
-    RouterModule.forChild(routes)
+    IonicModule
   ],
-  declarations: [CardGroupPage]
+  declarations: [
+    ExpandableCardComponent,
+    AlertComponent,
+    TeamMemberComponent,
+    TimeAgoPipe,
+    CardGroupPage
+  ],
+  exports: [CardGroupPage]
 })
 export class CardGroupPageModule {}

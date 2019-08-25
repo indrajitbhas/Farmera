@@ -8,7 +8,8 @@ import { Component, OnInit, Input } from '@angular/core';
 export class TeamMemberComponent implements OnInit {
   @Input() member;
 
-  constructor() { }
+  constructor() {
+  }
 
   ngOnInit() {}
 

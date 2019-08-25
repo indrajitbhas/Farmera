@@ -17,8 +17,8 @@ export class CardGroupPage implements OnInit {
   public cardHeight: string = "";
   public members: Observable<Array<TeamMember>>;
   public alerts: Observable<Array<any>>;
-  private alertsLength: number;
-  private membersLength: number;
+  public alertsLength: number;
+  public membersLength: number;
 
   constructor(
               private teamMembersService: TeamMembersService,
