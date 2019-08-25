@@ -2,6 +2,7 @@
   transition: max-height 0.4s ease-in-out;
   overflow: hidden;
   height: auto;
+  background-color: white
 }
 
 .collapsed {
@@ -14,4 +15,5 @@
   padding:10px 0px;
   height: 1.2em;
   font-weight: bold;
+  background-color: white;
 }

@@ -1,0 +1,14 @@
+<div class="alert-icons">
+  <div><ion-icon name="rainy"></ion-icon></div>
+  <ion-label>
+    <h3>{{alert.title}}</h3>
+  </ion-label>
+  <div><i class="material-icons toggle-icon">vibration</i></div>
+  <div><ion-toggle color="primary" class="toggle-icon"></ion-toggle></div>
+</div>
+<div class="alert-message">
+  <ul>
+    <span><li>{{alert.body}}
+  </li></span></ul>
+  <div style="text-align:left">{{alert.time | timeAgo}}</div>
+</div>

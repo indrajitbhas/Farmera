@@ -11,7 +11,9 @@ import { HomePage } from './home.page';
 import { ExpandableCardComponent } from '../expandable-card/expandable-card.component';
 import { CardGroupPage } from '../card-group/card-group.page';
 import { TeamMembersService } from '../team-members.service';
-import { EventsService } from '../events.service'
+import { EventsService } from '../events.service';
+import { TeamMemberComponent} from '../team-member/team-member.component';
+import { AlertComponent } from '../alert/alert.component';
 
 @NgModule({
   imports: [
@@ -30,7 +32,9 @@ import { EventsService } from '../events.service'
     HomePage,
     ExpandableCardComponent,
     CardGroupPage,
-    TimeAgoPipe
+    TimeAgoPipe,
+    TeamMemberComponent,
+    AlertComponent
   ],
   providers:[
     TeamMembersService,

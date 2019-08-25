@@ -25,7 +25,6 @@ export class TeamMembersService {
       retry(3),
       catchError(this.handleError),
       map(x => x['body']['results'].map((tm: any) => {
-        console.log(tm)
         return {
                 name: tm.name.first + " " + tm.name.last,
                 lastCheckedIn: Date.now() - Math.ceil(Math.random() * 10) * 3600000,

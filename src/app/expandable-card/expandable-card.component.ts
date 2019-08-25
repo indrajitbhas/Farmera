@@ -39,7 +39,6 @@ export class ExpandableCardComponent implements AfterViewInit {
     } else {
       this.items.map(listItem => {
         if (this.item == listItem) {
-          console.log(this.card.el.offsetHeight)
           listItem.expanded = !listItem.expanded;
         } else {
           listItem.expanded = false;

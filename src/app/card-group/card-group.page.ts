@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { TeamMemberComponent } from '../team-member/team-member.component';
+import { AlertComponent } from '../alert/alert.component';
 import { TeamMember } from "../team-members.service";
 import { TeamMembersService } from '../team-members.service';
 import { EventsService } from '../events.service';

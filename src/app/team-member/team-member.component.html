@@ -1,0 +1,15 @@
+<ion-item class="item" lines="none">
+  <ion-avatar slot="start">
+    <img src="{{member.picture}}">
+  </ion-avatar>
+  <ion-label class="capitalized">
+    <h3>{{member.name}}</h3>
+    <p>last check in {{member.lastCheckedIn | timeAgo}}</p>
+  </ion-label>
+  <ion-fab-button class="button_member" size="small">
+    <ion-icon name="text" class="button_member_icon"></ion-icon>
+  </ion-fab-button>
+  <ion-fab-button class="button_member" size="small">
+    <ion-icon name="call" class="button_member_icon"></ion-icon>
+  </ion-fab-button>
+</ion-item>
